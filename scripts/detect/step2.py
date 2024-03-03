@@ -135,10 +135,11 @@ def detect_cdna(global_para):
         for region, df_exon in df_gene.groupby('region'):
             list_stat_start.append(f_df_exon_start_stat(df_exon))
             list_stat_end.append(f_df_exon_end_stat(df_exon))
+        if len(list_stat_start)==0 or len(list_stat_end) == 0:
+            continue
+
         df_stat_start = pd.concat(list_stat_start)
         df_stat_end = pd.concat(list_stat_end)
-        if len(df_stat_start)==0 or len(df_stat_end)==0:
-            continue
         ### assign specific clipped position to each boundary
         df_stat_start = f_df_gene_start_stat_remove_dup(df_stat_start)
         df_stat_end = f_df_gene_end_stat_remove_dup(df_stat_end)
