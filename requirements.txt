@@ -1,0 +1,8 @@
+cDNA-detector/cndas==0.23.0
+numpy==1.17.0
+scipy==1.1.0
+pysam==0.15.0
+Statsmodels==0.11.1
+Biopython==1.77
+joblib==0.15.1
+gffpandas==0.1.0
